@@ -78,7 +78,9 @@ namespace TgSharp.Core
                 DeviceModel = "PC",
                 LangCode = "en",
                 Query = config,
-                SystemVersion = "Win 10.0"
+                SystemVersion = "Win 10.0",
+                SystemLangCode = "en",
+                LangPack = ""
             };
             var invokewithLayer = new TLRequestInvokeWithLayer() { Layer = 108, Query = request };
             await sender.Send(invokewithLayer, token).ConfigureAwait(false);
@@ -156,7 +158,7 @@ namespace TgSharp.Core
             if (String.IsNullOrWhiteSpace(phoneNumber))
                 throw new ArgumentNullException(nameof(phoneNumber));
 
-            var request = new TLRequestSendCode() { PhoneNumber = phoneNumber, ApiId = apiId, ApiHash = apiHash };
+            var request = new TLRequestSendCode() { PhoneNumber = phoneNumber, ApiId = apiId, ApiHash = apiHash, Settings = new TLCodeSettings { } };
 
             await RequestWithDcMigration(request, token).ConfigureAwait(false);
 
