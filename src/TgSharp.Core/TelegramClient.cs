@@ -80,7 +80,7 @@ namespace TgSharp.Core
                 Query = config,
                 SystemVersion = "Win 10.0"
             };
-            var invokewithLayer = new TLRequestInvokeWithLayer() { Layer = 66, Query = request };
+            var invokewithLayer = new TLRequestInvokeWithLayer() { Layer = 108, Query = request };
             await sender.Send(invokewithLayer, token).ConfigureAwait(false);
             await sender.Receive(invokewithLayer, token).ConfigureAwait(false);
 
