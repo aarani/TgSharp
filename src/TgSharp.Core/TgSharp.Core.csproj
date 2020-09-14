@@ -5,11 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BeetleX" Version="1.5.4" />
+    <Compile Remove="Utils\SRPHelper.cs" />
+    <Compile Remove="Utils\UploadHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TgSharp.TL\TgSharp.TL.csproj" />
+    <PackageReference Include="BeetleX" Version="1.5.4" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.6.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TgSharp.TL\TgSharp.Common.csproj" />
   </ItemGroup>
 
 </Project>

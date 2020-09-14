@@ -12,9 +12,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TgSharp.Tests.NUnit", "TgSh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TgSharp.Core.OLD", "TgSharp.Core.OLD\TgSharp.Core.OLD.csproj", "{6D916BF5-CF58-4F71-BC7A-5CBCB4FD0AD1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TgSharp.TL", "TgSharp.TL\TgSharp.TL.csproj", "{01B4EC9D-2D79-4A0E-B4A9-B24F072B2213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TgSharp.Common", "TgSharp.TL\TgSharp.Common.csproj", "{01B4EC9D-2D79-4A0E-B4A9-B24F072B2213}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TgSharp.Core", "TgSharp.Core\TgSharp.Core.csproj", "{D11D3C71-5B46-4C49-A63A-1D3E245F384D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TgSharp.Core", "TgSharp.Core\TgSharp.Core.csproj", "{D11D3C71-5B46-4C49-A63A-1D3E245F384D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{78070F85-9703-4699-A933-2B0877BCC811}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{D11D3C71-5B46-4C49-A63A-1D3E245F384D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D11D3C71-5B46-4C49-A63A-1D3E245F384D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D11D3C71-5B46-4C49-A63A-1D3E245F384D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78070F85-9703-4699-A933-2B0877BCC811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78070F85-9703-4699-A933-2B0877BCC811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78070F85-9703-4699-A933-2B0877BCC811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78070F85-9703-4699-A933-2B0877BCC811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

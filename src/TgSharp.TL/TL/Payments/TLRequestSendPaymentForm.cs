@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Payments
+namespace TgSharp.Common.Payments
 {
     [TLObject(730364339)]
     public class TLRequestSendPaymentForm : TLMethod

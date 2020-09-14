@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
-using TgSharp.Core.MTProto.Crypto;
+using TgSharp.Common.MTProto.Crypto;
 
 namespace TgSharp.Core.Networking.Transports.Tcp
 {

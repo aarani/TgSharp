@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL
+namespace TgSharp.Common
 {
     [TLObject(371037736)]
     public class TLTopPeerCategoryChannels : TLAbsTopPeerCategory

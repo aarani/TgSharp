@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Help
+namespace TgSharp.Common.Help
 {
     public abstract class TLAbsTermsOfServiceUpdate : TLObject
     {

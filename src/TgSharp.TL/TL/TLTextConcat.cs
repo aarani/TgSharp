@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL
+namespace TgSharp.Common
 {
     [TLObject(2120376535)]
     public class TLTextConcat : TLAbsRichText

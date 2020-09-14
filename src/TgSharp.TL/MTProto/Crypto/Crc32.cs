@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TgSharp.Core.MTProto.Crypto
+namespace TgSharp.Common.MTProto.Crypto
 {
     /// <summary>
     /// Implements a 32-bit CRC hash algorithm compatible with Zip etc.

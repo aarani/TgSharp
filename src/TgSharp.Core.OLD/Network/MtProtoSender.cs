@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-
-using TgSharp.TL;
 using TgSharp.Core.Exceptions;
 using TgSharp.Core.MTProto;
 using TgSharp.Core.MTProto.Crypto;
 using TgSharp.Core.Network.Exceptions;
 using TgSharp.Core.Network.Requests;
 using TgSharp.Core.Utils;
+using TgSharp.Common;
 
 namespace TgSharp.Core.Network
 {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Contacts
+namespace TgSharp.Common.Contacts
 {
     [TLObject(-2062238246)]
     public class TLRequestToggleTopPeers : TLMethod

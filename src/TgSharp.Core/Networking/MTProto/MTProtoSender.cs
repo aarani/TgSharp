@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using TgSharp.Core.MtProto;
-using TgSharp.Core.MTProto.Crypto;
+using TgSharp.Common.MTProto.Crypto;
 using TgSharp.Core.Networking.Transports;
 using TgSharp.Core.Utils;
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.Core.Networking.MtProto
+namespace TgSharp.Core.Networking.MTProto
 {
     public class MTProtoSender
     {
@@ -25,6 +24,8 @@ namespace TgSharp.Core.Networking.MtProto
         {
             this.transport = transport;
             transport.DataReceived += Transport_DataReceived;
+            transport.Connected += () => Console.WriteLine("connected!");
+            transport.Disconnected += () => Console.WriteLine("disconnected!");
             random = new Random();
         }
         private void Transport_DataReceived(int seqNo, byte[] packet)
@@ -79,7 +80,7 @@ namespace TgSharp.Core.Networking.MtProto
         }
         public long Send(byte[] data, bool confirmed = false, bool authenticated = false)
         {
-            if (!authenticated || session == null)
+            if (!authenticated || Session == null)
             {
                 var messageId = GetNewMessageId();
                 using (var memoryStream = new MemoryStream())
@@ -99,9 +100,9 @@ namespace TgSharp.Core.Networking.MtProto
 
                 return messageId;
             }
-            else if (authenticated && session != null)
+            else if (authenticated && Session != null)
             {
-                var messageId = session.GetNewMessageId();
+                var messageId = Session.GetNewMessageId();
 
                 byte[] msgKey;
                 byte[] ciphertext;
@@ -109,15 +110,15 @@ namespace TgSharp.Core.Networking.MtProto
                 {
                     using (BinaryWriter plaintextWriter = new BinaryWriter(plaintextPacket))
                     {
-                        plaintextWriter.Write(session.Salt);
-                        plaintextWriter.Write(session.Id);
+                        plaintextWriter.Write(Session.Salt);
+                        plaintextWriter.Write(Session.Id);
                         plaintextWriter.Write(messageId);
                         plaintextWriter.Write(GenerateSequence(confirmed));
                         plaintextWriter.Write(data.Length);
                         plaintextWriter.Write(data);
 
                         msgKey = Helpers.CalcMsgKey(plaintextPacket.GetBuffer());
-                        ciphertext = AES.EncryptAES(Helpers.CalcKey(session.AuthKey.Data, msgKey, true), plaintextPacket.GetBuffer());
+                        ciphertext = AES.EncryptAES(Helpers.CalcKey(Session.AuthKey.Data, msgKey, true), plaintextPacket.GetBuffer());
                     }
                 }
 
@@ -125,7 +126,7 @@ namespace TgSharp.Core.Networking.MtProto
                 {
                     using (BinaryWriter writer = new BinaryWriter(ciphertextPacket))
                     {
-                        writer.Write(session.AuthKey.Id);
+                        writer.Write(Session.AuthKey.Id);
                         writer.Write(msgKey);
                         writer.Write(ciphertext);
 
@@ -138,7 +139,7 @@ namespace TgSharp.Core.Networking.MtProto
         }
         private int GenerateSequence(bool confirmed)
         {
-            return confirmed ? session.Sequence++ * 2 + 1 : session.Sequence * 2;
+            return confirmed ? Session.Sequence++ * 2 + 1 : Session.Sequence * 2;
         }
         private MemoryStream MakeMemory(int Len)
         {

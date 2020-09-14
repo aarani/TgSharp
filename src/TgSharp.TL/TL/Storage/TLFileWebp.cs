@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Storage
+namespace TgSharp.Common.Storage
 {
     [TLObject(276907596)]
     public class TLFileWebp : TLAbsFileType

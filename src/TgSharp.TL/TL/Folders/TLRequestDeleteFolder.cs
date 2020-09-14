@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Folders
+namespace TgSharp.Common.Folders
 {
     [TLObject(472471681)]
     public class TLRequestDeleteFolder : TLMethod

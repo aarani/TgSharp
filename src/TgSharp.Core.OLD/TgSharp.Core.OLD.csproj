@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TgSharp.TL\TgSharp.TL.csproj" />
+    <ProjectReference Include="..\TgSharp.TL\TgSharp.Common.csproj" />
   </ItemGroup>
 
 </Project>

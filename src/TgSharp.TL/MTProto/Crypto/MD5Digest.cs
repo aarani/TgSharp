@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace TgSharp.Core.MTProto.Crypto
+namespace TgSharp.Common.MTProto.Crypto
 {
     public interface IDigest
     {

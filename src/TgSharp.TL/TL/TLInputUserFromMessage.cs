@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL
+namespace TgSharp.Common
 {
     [TLObject(756118935)]
     public class TLInputUserFromMessage : TLAbsInputUser

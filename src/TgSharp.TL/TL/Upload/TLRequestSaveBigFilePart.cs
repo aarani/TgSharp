@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Upload
+namespace TgSharp.Common.Upload
 {
     [TLObject(-562337987)]
     public class TLRequestSaveBigFilePart : TLMethod

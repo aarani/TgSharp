@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Photos
+namespace TgSharp.Common.Photos
 {
     [TLObject(-2016444625)]
     public class TLRequestDeletePhotos : TLMethod

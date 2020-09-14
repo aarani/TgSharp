@@ -1,6 +1,6 @@
 using System;
 using System.Security.Cryptography;
-using TgSharp.Core.MTProto.Crypto;
+using TgSharp.Common.MTProto.Crypto;
 
 namespace TgSharp.Core.Utils
 {

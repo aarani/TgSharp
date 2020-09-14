@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Auth
+namespace TgSharp.Common.Auth
 {
     [TLObject(-543777747)]
     public class TLExportedAuthorization : TLObject

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TgSharp.TL
+namespace TgSharp.Common
 {
     public abstract class TLMethod : TLObject
     {

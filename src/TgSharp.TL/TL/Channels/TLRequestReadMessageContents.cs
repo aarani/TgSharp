@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Channels
+namespace TgSharp.Common.Channels
 {
     [TLObject(-357180360)]
     public class TLRequestReadMessageContents : TLMethod

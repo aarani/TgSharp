@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Auth
+namespace TgSharp.Common.Auth
 {
     [TLObject(1148485274)]
     public class TLAuthorizationSignUpRequired : TLAbsAuthorization

@@ -1,4 +1,4 @@
-﻿namespace TgSharp.Core.MtProto
+﻿namespace TgSharp.Core.Networking.MTProto
 {
     public class MTProtoMessage
     {

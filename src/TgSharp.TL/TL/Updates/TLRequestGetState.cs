@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Updates
+namespace TgSharp.Common.Updates
 {
     [TLObject(-304838614)]
     public class TLRequestGetState : TLMethod

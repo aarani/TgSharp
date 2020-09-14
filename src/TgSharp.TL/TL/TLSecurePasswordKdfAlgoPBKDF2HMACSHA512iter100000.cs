@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL
+namespace TgSharp.Common
 {
     [TLObject(-1141711456)]
     public class TLSecurePasswordKdfAlgoPBKDF2HMACSHA512iter100000 : TLAbsSecurePasswordKdfAlgo

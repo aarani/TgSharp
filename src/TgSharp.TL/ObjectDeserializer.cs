@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TgSharp.TL
+namespace TgSharp.Common
 {
     public class ObjectUtils
     {
@@ -17,7 +18,7 @@ namespace TgSharp.TL
             Type t = null;
             try
             {
-                t = TLContext.getType(Constructor);
+                t = TLContext.GetType(Constructor);
                 obj = Activator.CreateInstance(t);
             }
             catch (Exception ex)
@@ -37,6 +38,8 @@ namespace TgSharp.TL
             }
             else throw new NotImplementedException("Weird Type : " + t.Namespace + " | " + t.Name);
         }
+
+
         public static void SerializeObject(object obj, BinaryWriter writer)
         {
             ((TLObject)obj).SerializeBody(writer);

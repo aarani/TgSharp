@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Phone
+namespace TgSharp.Common.Phone
 {
     [TLObject(662363518)]
     public class TLRequestSaveCallDebug : TLMethod

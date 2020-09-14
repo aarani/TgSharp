@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Auth
+namespace TgSharp.Common.Auth
 {
     [TLObject(-1783866140)]
     public class TLRequestImportLoginToken : TLMethod

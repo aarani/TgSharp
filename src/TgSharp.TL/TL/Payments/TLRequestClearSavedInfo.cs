@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Payments
+namespace TgSharp.Common.Payments
 {
     [TLObject(-667062079)]
     public class TLRequestClearSavedInfo : TLMethod

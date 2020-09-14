@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Account
+namespace TgSharp.Common.Account
 {
     [TLObject(-2128640689)]
     public class TLSentEmailCode : TLObject

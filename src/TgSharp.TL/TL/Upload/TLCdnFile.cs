@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Upload
+namespace TgSharp.Common.Upload
 {
     [TLObject(-1449145777)]
     public class TLCdnFile : TLAbsCdnFile

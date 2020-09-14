@@ -8,7 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using TgSharp.Core.MTProto.Crypto;
+using TgSharp.Common.MTProto.Crypto;
 
 namespace TgSharp.Core.Networking.Transports.Tcp
 {
@@ -26,8 +26,14 @@ namespace TgSharp.Core.Networking.Transports.Tcp
             try
             {
                 client = SocketFactory.CreateClient<AsyncTcpClient>(address, port);
+                client.Connect(out _);
                 client.Connected += (client) => Connected?.Invoke();
-                client.Disconnected += (client) => Disconnected?.Invoke();
+                client.Disconnected += (IClient client) =>
+                {
+                    Disconnected?.Invoke();
+                    Console.WriteLine(client.Connect(out _));
+                };
+
                 client.DataReceive = async (o, e) =>
                 {
 
@@ -88,8 +94,10 @@ namespace TgSharp.Core.Networking.Transports.Tcp
                 throw new InvalidOperationException("Client not connected to server.");
 
             var tcpMessage = new TcpMessage(sendCounter, data);
+            BytesHandler bytes = tcpMessage.Encode();
+
             client.Send(
-                tcpMessage.Encode()
+                bytes
                 );
 
             sendCounter++;
@@ -100,6 +108,8 @@ namespace TgSharp.Core.Networking.Transports.Tcp
 
         public void Dispose()
         {
+            Console.WriteLine("closed");
+            client.DisConnect();
             client.Dispose();
         }
     }

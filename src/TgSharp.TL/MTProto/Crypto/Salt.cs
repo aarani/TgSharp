@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TgSharp.Core.MTProto.Crypto
+namespace TgSharp.Common.MTProto.Crypto
 {
     public class Salt : IComparable<Salt>
     {

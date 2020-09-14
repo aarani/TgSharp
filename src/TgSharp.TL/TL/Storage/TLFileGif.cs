@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Storage
+namespace TgSharp.Common.Storage
 {
     [TLObject(-891180321)]
     public class TLFileGif : TLAbsFileType

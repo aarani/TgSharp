@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 
-namespace TgSharp.Core.MTProto.Crypto
+namespace TgSharp.Common.MTProto.Crypto
 {
 #if !(NETCF_1_0 || NETCF_2_0 || SILVERLIGHT)
     [Serializable]

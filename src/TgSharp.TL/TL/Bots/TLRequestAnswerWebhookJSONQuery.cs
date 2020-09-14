@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Bots
+namespace TgSharp.Common.Bots
 {
     [TLObject(-434028723)]
     public class TLRequestAnswerWebhookJSONQuery : TLMethod

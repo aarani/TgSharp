@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TgSharp.TL
+namespace TgSharp.Common
 {
     public class TLVector<T> : TLObject, IList<T>
     {
@@ -85,7 +85,7 @@ namespace TgSharp.TL
                 else if (typeof(T).BaseType == typeof(TLObject))
                 {
                     int constructor = br.ReadInt32();
-                    Type type = TLContext.getType(constructor);
+                    Type type = TLContext.GetType(constructor);
                     object obj = Activator.CreateInstance(type);
                     type.GetMethod("DeserializeBody").Invoke(obj, new object[] { br });
                     lists.Add((T)Convert.ChangeType(obj, type));

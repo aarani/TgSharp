@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace TgSharp.Core.MTProto.Crypto
+namespace TgSharp.Common.MTProto.Crypto
 {
     public class AESKeyData
     {

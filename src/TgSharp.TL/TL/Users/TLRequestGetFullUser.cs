@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Users
+namespace TgSharp.Common.Users
 {
     [TLObject(-902781519)]
     public class TLRequestGetFullUser : TLMethod

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Auth
+namespace TgSharp.Common.Auth
 {
     [TLObject(-841733627)]
     public class TLRequestBindTempAuthKey : TLMethod

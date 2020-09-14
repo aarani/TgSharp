@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TgSharp.TL;
+using TgSharp.Common;
 
-namespace TgSharp.TL.Account
+namespace TgSharp.Common.Account
 {
     [TLObject(-614138572)]
     public class TLTmpPassword : TLObject
