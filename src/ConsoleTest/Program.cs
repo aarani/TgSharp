@@ -14,7 +14,7 @@ namespace ConsoleTest
             client.Connect();
 
             //System.Threading.Thread.Sleep(-1);
-            await client.DoAuthentication();
+            await client.DoAuthentication().ConfigureAwait(false);
 
             await Task.Delay(TimeSpan.FromMilliseconds(-1));
         }

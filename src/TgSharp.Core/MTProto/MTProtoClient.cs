@@ -46,7 +46,6 @@ namespace TgSharp.Core.MTProto
             using (var br = new BinaryReader(ms))
             {
                 int Constructor = br.ReadInt32();
-                Console.WriteLine($"MTPROTO Message: #{Constructor}");
                 Tasks.TryGetValue(Constructor, out var task);
                 if (task != null)
                 {
@@ -77,7 +76,6 @@ namespace TgSharp.Core.MTProto
         {
             TaskCompletionSource<TLObject> completionSource = new TaskCompletionSource<TLObject>();
             Tasks[GetConstructor(typeof(T))] = completionSource;
-            Console.WriteLine(5);
             return (T)await completionSource.Task;
         }
 

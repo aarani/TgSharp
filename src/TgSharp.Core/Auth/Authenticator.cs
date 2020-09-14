@@ -14,16 +14,12 @@ namespace TgSharp.Core.Auth
         public static async Task DoAuthentication(this MTProtoClient client, CancellationToken token = default(CancellationToken))
         {
             token.ThrowIfCancellationRequested();
-            Console.WriteLine(1);
             byte[] nonceBytes = new byte[16];
             new Random().NextBytes(nonceBytes);
-            Console.WriteLine(2);
             var step1 = new MTRequestReqPQMulti() { Nonce =  new BigInteger(1, nonceBytes)};
 
             client.Send(step1.Serialize(), false, false);
-            Console.WriteLine(3);
             MTResPq result = await client.ReceiveObject<MTResPq>();
-            Console.WriteLine(4);
         }
     }
 }

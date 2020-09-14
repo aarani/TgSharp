@@ -27,11 +27,12 @@ namespace TgSharp.Core.Networking.Transports.Tcp
             {
                 client = SocketFactory.CreateClient<AsyncTcpClient>(address, port);
                 client.Connect(out _);
+                client.ClientError += (IClient client, ClientErrorArgs error) => 
+                    Console.WriteLine(error.Error.Message);
                 client.Connected += (client) => Connected?.Invoke();
                 client.Disconnected += (IClient client) =>
                 {
                     Disconnected?.Invoke();
-                    Console.WriteLine(client.Connect(out _));
                 };
 
                 client.DataReceive = async (o, e) =>
@@ -108,7 +109,7 @@ namespace TgSharp.Core.Networking.Transports.Tcp
 
         public void Dispose()
         {
-            Console.WriteLine("closed");
+            Console.WriteLine("disposed");
             client.DisConnect();
             client.Dispose();
         }
