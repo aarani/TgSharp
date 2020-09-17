@@ -20,6 +20,7 @@ namespace TgSharp.Core.Auth
 
             client.Send(step1.Serialize(), false, false);
             MTResPq result = await client.ReceiveObject<MTResPq>();
+            Console.WriteLine("MTResPq Received");
         }
     }
 }

@@ -39,9 +39,9 @@ namespace TgSharp.Common.MTProto.Schema
             BytesUtil.Serialize(PQ, bw);
             BytesUtil.Serialize(P, bw);
             BytesUtil.Serialize(Q, bw);
-            bw.Write(Nonce.ToByteArray());
-            bw.Write(ServerNonce.ToByteArray());
-            bw.Write(NewNonce.ToByteArray());
+            bw.Write(Nonce.ToByteArrayUnsigned());
+            bw.Write(ServerNonce.ToByteArrayUnsigned());
+            bw.Write(NewNonce.ToByteArrayUnsigned());
             bw.Write(ExpiresIn);
         }
     }

@@ -25,7 +25,7 @@ namespace TgSharp.Common.MTProto.Schema
         public override void SerializeBody(BinaryWriter bw)
         {
             bw.Write(Constructor);
-            bw.Write(Nonce.ToByteArray());
+            bw.Write(Nonce.ToByteArrayUnsigned());
         }
 
         public override void DeserializeResponse(BinaryReader br)

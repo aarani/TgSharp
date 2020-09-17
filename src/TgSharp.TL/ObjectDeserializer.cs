@@ -10,6 +10,13 @@ namespace TgSharp.Common
 {
     public class ObjectUtils
     {
+        public static object DeserializeObject(byte[] src)
+        {
+            using (MemoryStream stream = new MemoryStream(src))
+            using (BinaryReader reader = new BinaryReader(stream))
+                return DeserializeObject(reader);
+        }
+
         public static object DeserializeObject(BinaryReader reader)
         {
             int Constructor = reader.ReadInt32();

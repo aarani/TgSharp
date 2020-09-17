@@ -3,6 +3,7 @@ using TgSharp.Core.MTProto;
 using TgSharp.Core.Auth;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace ConsoleTest
 {
@@ -10,13 +11,16 @@ namespace ConsoleTest
     {
         static async Task Main(string[] args)
         {
+            //TelegramClient client = new TelegramClient();
+
+            //await client.ConnectAsync();
+            //await client.Authorize();
+
             MTProtoClient client = new MTProtoClient();
             client.Connect();
+            await client.DoAuthentication();
 
-            //System.Threading.Thread.Sleep(-1);
-            await client.DoAuthentication().ConfigureAwait(false);
-
-            await Task.Delay(TimeSpan.FromMilliseconds(-1));
+            await Task.Delay(-1);
         }
     }
 }

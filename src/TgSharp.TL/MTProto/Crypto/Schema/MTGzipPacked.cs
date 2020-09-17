@@ -9,7 +9,7 @@ namespace TgSharp.Common.MTProto.Schema
     {
         public override int Constructor => 812830625;
 
-        public byte[] UnpackedData { get; set; }
+        public TLObject UnpackedObject { get; set; }
 
         public void ComputeFlags()
         {
@@ -18,12 +18,14 @@ namespace TgSharp.Common.MTProto.Schema
         public override void DeserializeBody(BinaryReader br)
         {
             var packedData = BytesUtil.Deserialize(br);
-            UnpackedData = Decompress(packedData);
+            ObjectUtils.DeserializeObject(Decompress(packedData));
         }
 
         public override void SerializeBody(BinaryWriter bw)
         {
             bw.Write(Constructor);
+
+            var UnpackedData = UnpackedObject.Serialize();
 
             var packedData = Compress(UnpackedData);
             BytesUtil.Serialize(packedData, bw);
