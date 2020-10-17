@@ -37,10 +37,14 @@ namespace TgSharp.Core.Network
 
         private int GenerateSequence(bool confirmed)
         {
-            lock (session.Lock) {
-                try {
+            lock (session.Lock)
+            {
+                try
+                {
                     return confirmed ? session.Sequence++ * 2 + 1 : session.Sequence * 2;
-                } finally {
+                }
+                finally
+                {
                     sessionStore.Save(session);
                 }
             }
@@ -71,7 +75,7 @@ namespace TgSharp.Core.Network
                 await Send(memory.ToArray(), request, token).ConfigureAwait(false);
             }
 
-            sessionStore.Save (session);
+            sessionStore.Save(session);
         }
 
         public async Task Send(byte[] packet, TLMethod request, CancellationToken token = default(CancellationToken))
@@ -93,6 +97,11 @@ namespace TgSharp.Core.Network
                     plaintextWriter.Write(packet.Length);
                     plaintextWriter.Write(packet);
 
+#if VERBOSE_BUILD
+                    Console.WriteLine($"Plain Text Packet for request {request.GetType().Name}:");
+                    Console.WriteLine(BitConverter.ToString(plaintextPacket.GetBuffer()));
+#endif
+
                     msgKey = Helpers.CalcMsgKey(plaintextPacket.GetBuffer());
                     ciphertext = AES.EncryptAES(Helpers.CalcKey(session.AuthKey.Data, msgKey, true), plaintextPacket.GetBuffer());
                 }
@@ -105,6 +114,11 @@ namespace TgSharp.Core.Network
                     writer.Write(session.AuthKey.Id);
                     writer.Write(msgKey);
                     writer.Write(ciphertext);
+
+#if VERBOSE_BUILD
+                    Console.WriteLine($"Cipher Text Packet for request {request.GetType().Name}:");
+                    Console.WriteLine(BitConverter.ToString(ciphertextPacket.GetBuffer()));
+#endif
 
                     await transport.Send(ciphertextPacket.GetBuffer(), token).ConfigureAwait(false);
                 }

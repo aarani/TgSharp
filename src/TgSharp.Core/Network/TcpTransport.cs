@@ -51,7 +51,14 @@ namespace TgSharp.Core.Network
 
             var tcpMessage = new TcpMessage(sendCounter, packet);
 
-            await stream.WriteAsync(tcpMessage.Encode(), 0, tcpMessage.Encode().Length, token).ConfigureAwait(false);
+            var encodedPacket = tcpMessage.Encode();
+
+#if VERBOSE_BUILD
+            Console.WriteLine($"Sent Encrypted Packet #{sendCounter}:");
+            Console.WriteLine(BitConverter.ToString(encodedPacket));
+#endif
+
+            await stream.WriteAsync(encodedPacket, 0, encodedPacket.Length, token).ConfigureAwait(false);
             sendCounter++;
         }
 
